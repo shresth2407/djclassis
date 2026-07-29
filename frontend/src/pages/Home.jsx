@@ -983,7 +983,7 @@ const Footer = () => (
   </footer>
 );
 
-/* ══════ggfggf
+/* ══════ggfggfgffh
    HOME PAGE (default export)
 ══════════════════════════════════ */
 const Home = () => (
