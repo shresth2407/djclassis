@@ -983,7 +983,7 @@ const Footer = () => (
   </footer>
 );
 
-/* ═════
+/* ═════xcfg
    HOME PAGE (default export)
 ══════════════════════════════════ */
 const Home = () => (
