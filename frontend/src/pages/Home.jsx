@@ -985,7 +985,7 @@ const Footer = () => (
 
 /* ═════cgxcv
    HOME PAGE (default export)
-══════════════════════════════════ */
+═══════════════════════════════ */
 const Home = () => (
   <>
     <style>{STYLES}</style>
