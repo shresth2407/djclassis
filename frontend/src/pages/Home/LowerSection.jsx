@@ -8,8 +8,8 @@ import { useState, useEffect, useRef } from "react";
    black   #0d0d0d   card    #151515   green   #00b67a
    Fonts: Poppins (body/headings) + Caveat (script eyebrows)
    Sections: About → Marquee → Genres → Premium Services →
-   How It Works → Common Types → Industry + Partners →
-   Events → Book CTA → Contact
+   How It Works → Common Types → Industry + Brand strip →
+   Book CTA → Contact
 ══════════════════════════════════════════════════════════════ */
 
 /* ───────────── global CSS: fonts + keyframes ───────────── */
@@ -332,34 +332,26 @@ const MarqueeBand = () => (
 );
 
 /* ═══════════════════ 3. TRENDING GENRES ═══════════════════ */
-/* Put image URLs in `img` (e.g. "/images/wedding.jpg") to show real photos. Gradients are the fallback. */
+/* Images come from the /public folder: a.png, b.png, c.png ... (Vite/CRA serve them from "/"). Gradient is only a fallback if an image is missing. */
 const trending = [
-  { n: "01", t: "Wedding DJ", s: "Sangeet · Baraat · Reception", g: "from-[#7a1fa2] via-[#ff4f8b] to-[#ff8a3d]", img: "" },
-  { n: "02", t: "Bollywood Night", s: "Chartbusters & retro", g: "from-[#3a0a1f] via-[#e11d2e] to-[#ff4f8b]", img: "" },
-  { n: "03", t: "Club & EDM", s: "House · Techno · Big room", g: "from-[#0b1b4a] via-[#6a1fd0] to-[#ff4f8b]", img: "" },
-  { n: "04", t: "Bhojpuri Special", s: "Superhit dance floor", g: "from-[#6b2a00] via-[#ff8a3d] to-[#fbbf24]", img: "" },
-  { n: "05", t: "Hip-Hop Session", s: "Trap · Drill · Desi hip-hop", g: "from-[#06322f] via-[#12908a] to-[#2dd4bf]", img: "" },
-  { n: "06", t: "Corporate Event", s: "Launches & annual days", g: "from-[#2a2a2a] via-[#8a3a1f] to-[#ee5a3b]", img: "" },
+  { n: "01", g: "from-[#7a1fa2] via-[#ff4f8b] to-[#ff8a3d]", img: "/a.png" },
+  { n: "02", g: "from-[#3a0a1f] via-[#e11d2e] to-[#ff4f8b]", img: "/b.png" },
+  { n: "03", g: "from-[#0b1b4a] via-[#6a1fd0] to-[#ff4f8b]", img: "/c.png" },
+  { n: "04", g: "from-[#6b2a00] via-[#ff8a3d] to-[#fbbf24]", img: "/d.png" },
+  { n: "05", g: "from-[#06322f] via-[#12908a] to-[#2dd4bf]", img: "/e.png" },
+  { n: "06", g: "from-[#2a2a2a] via-[#8a3a1f] to-[#ee5a3b]", img: "/f.png" },
 ];
 
-const GenreCard = ({ n, t, s, g, img, i }) => (
+const GenreCard = ({ n, g, img, i }) => (
   <Reveal dir="up" delay={(i % 3) * 120}>
-    <div className="group relative h-[440px] cursor-pointer overflow-hidden rounded-2xl">
-      <div className={`absolute inset-0 bg-gradient-to-br ${g} transition-transform duration-700 group-hover:scale-110`}
-        style={img ? { backgroundImage: `url(${img})`, backgroundSize: "cover", backgroundPosition: "center" } : {}} />
-      {!img && (
-        <>
-          <Vinyl className="absolute -right-10 top-16 h-60 w-60 opacity-90 transition-transform duration-[1500ms] group-hover:rotate-[200deg]" />
-          <div className="absolute bottom-40 left-6"><Equalizer bars={10} h={46} color="bg-white/80" /></div>
-        </>
-      )}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+    <div className="group relative h-[500px] cursor-pointer overflow-hidden rounded-2xl">
+      <div className={`absolute inset-0 bg-gradient-to-br ${g}`} />
+      <img src={img} alt={`Genre ${n}`} loading="lazy"
+        onError={(e) => { e.currentTarget.style.display = "none"; }}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       <span className="absolute left-5 top-5 grid h-14 w-14 place-items-center rounded-full bg-white text-lg font-semibold text-[#ff4f8b] transition-all duration-500 group-hover:rotate-[360deg] group-hover:bg-[#fbbf24] group-hover:text-black">{n}</span>
-      <div className="absolute inset-x-0 bottom-0 translate-y-3 p-6 transition-transform duration-500 group-hover:translate-y-0">
-        <h3 className="text-2xl font-bold text-white">{t}</h3>
-        <p className="mt-1 text-sm text-white/70">{s}</p>
-        <span className="mt-4 block h-[3px] w-0 bg-gradient-to-r from-[#ff4f8b] to-[#fbbf24] transition-all duration-500 group-hover:w-24" />
-      </div>
+      <span className="absolute bottom-0 left-0 h-[4px] w-0 bg-gradient-to-r from-[#ff4f8b] to-[#fbbf24] transition-all duration-700 group-hover:w-full" />
     </div>
   </Reveal>
 );
@@ -502,13 +494,13 @@ const HowItWorks = () => (
 
 /* ═══════════════════ 6. COMMON TYPES (water-flow carousel, left → right) ═══════════════════ */
 const types = [
-  { t: "Bollywood", g: "from-[#3a0a1f] via-[#e11d2e] to-[#ff4f8b]" },
-  { t: "Bhojpuri", g: "from-[#6b2a00] via-[#ff8a3d] to-[#fbbf24]" },
-  { t: "EDM / House", g: "from-[#0b1b4a] via-[#6a1fd0] to-[#ff4f8b]" },
-  { t: "Hip-Hop", g: "from-[#06322f] via-[#12908a] to-[#2dd4bf]" },
-  { t: "Punjabi", g: "from-[#4a0d2e] via-[#ff4f8b] to-[#fbbf24]" },
-  { t: "Retro Classics", g: "from-[#2a2a2a] via-[#8a3a1f] to-[#ee5a3b]" },
-  { t: "Sufi Night", g: "from-[#1d0b3b] via-[#7a1fa2] to-[#ff8a3d]" },
+  { g: "from-[#3a0a1f] via-[#e11d2e] to-[#ff4f8b]", img: "/g.png" },
+  { g: "from-[#6b2a00] via-[#ff8a3d] to-[#fbbf24]", img: "/h.png" },
+  { g: "from-[#0b1b4a] via-[#6a1fd0] to-[#ff4f8b]", img: "/i.png" },
+  { g: "from-[#06322f] via-[#12908a] to-[#2dd4bf]", img: "/j.png" },
+  { g: "from-[#4a0d2e] via-[#ff4f8b] to-[#fbbf24]", img: "/k.png" },
+  { g: "from-[#2a2a2a] via-[#8a3a1f] to-[#ee5a3b]", img: "/l.png" },
+  { g: "from-[#1d0b3b] via-[#7a1fa2] to-[#ff8a3d]", img: "/m.png" },
 ];
 
 const CommonTypes = () => (
@@ -525,16 +517,13 @@ const CommonTypes = () => (
     </div>
 
     <Marquee dir="right" speed={45} className="relative">
-      {types.map(({ t, g }) => (
-        <div key={t} className="group relative mr-5 h-[440px] w-[330px] shrink-0 overflow-hidden rounded-2xl">
-          <div className={`absolute inset-0 bg-gradient-to-br ${g} transition-transform duration-700 group-hover:scale-110`} />
-          <Vinyl className="absolute -bottom-10 -left-10 h-56 w-56 opacity-80 transition-transform duration-[1500ms] group-hover:rotate-180" />
-          <div className="absolute right-6 top-6"><Equalizer bars={7} h={34} color="bg-white/80" /></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-          <div className="absolute bottom-0 p-6">
-            <p className="text-2xl font-bold text-white">{t}</p>
-            <p className="text-sm text-white/65">DJ Classis · Live Mix</p>
-          </div>
+      {types.map(({ g, img }, i) => (
+        <div key={img} className="group relative mr-5 h-[500px] w-[400px] shrink-0 overflow-hidden rounded-2xl">
+          <div className={`absolute inset-0 bg-gradient-to-br ${g}`} />
+          <img src={img} alt={`Type ${i + 1}`} loading="lazy"
+            onError={(e) => { e.currentTarget.style.display = "none"; }}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110" />
+          <span className="absolute bottom-0 left-0 h-[4px] w-0 bg-gradient-to-r from-[#ff4f8b] to-[#fbbf24] transition-all duration-700 group-hover:w-full" />
         </div>
       ))}
     </Marquee>
@@ -548,15 +537,6 @@ const industry = [
   { t: "EDM", s: "DJ Classis", g: "from-[#6a1fd0] to-[#0b1b4a]" },
   { t: "Hip-Hop", s: "DJ Classis", g: "from-[#12908a] to-[#06322f]" },
   { t: "Retro", s: "DJ Classis", g: "from-[#ff4f8b] to-[#4a0d2e]" },
-];
-
-const partners = [
-  <span key="a" className="flex items-center gap-3 text-3xl font-semibold tracking-[0.2em] text-[#2b0a03]"><span className="grid h-10 w-10 place-items-center rounded-full border-2 border-[#2b0a03]"><Icon name="disc" className="h-6 w-6" /></span>Pulse</span>,
-  <span key="b" className="flex items-center border-[3px] border-[#2b0a03] text-2xl font-bold tracking-[0.25em] text-[#2b0a03]"><span className="bg-[#2b0a03] px-3 py-2 text-[#ee5a3b]">♥</span><span className="px-4 py-2">VINTAGE</span></span>,
-  <span key="c" className="text-3xl font-light tracking-[0.15em] text-[#2b0a03]">GRAND<span className="mx-2 font-black">×</span>BANQUET</span>,
-  <span key="d" className="border-l-[3px] border-[#2b0a03] pl-4 text-3xl font-light tracking-[0.2em] text-[#2b0a03]">ELEVATE<br /><span className="text-[10px] tracking-[0.5em]">NIGHT CLUB</span></span>,
-  <span key="e" className="text-3xl font-black italic tracking-tight text-[#2b0a03]">OpenSky<span className="text-white">.</span></span>,
-  <span key="f" className="flex items-center gap-3 text-3xl font-semibold tracking-[0.2em] text-[#2b0a03]"><Icon name="crown" className="h-8 w-8" />SKY LOUNGE</span>,
 ];
 
 const Industry = () => (
@@ -587,59 +567,18 @@ const Industry = () => (
       </div>
     </section>
 
-    {/* coral partner strip */}
-    <section className="relative overflow-hidden bg-[#ee5a3b] py-20">
+    {/* coral strip — brand name only */}
+    <section className="relative overflow-hidden bg-[#ee5a3b] py-16">
       <div className="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-[#ff8a3d]/50 blur-3xl" />
-      <p className="relative mb-12 text-center text-sm font-semibold text-[#2b0a03]">
-        Trusted Partner: <span className="font-bold text-white">Venues &amp; Event Houses We Play At</span>
-      </p>
       <Marquee dir="right" speed={32} className="relative">
-        {partners.map((p, i) => <div key={i} className="mx-14 shrink-0">{p}</div>)}
+        {Array.from({ length: 4 }).map((_, i) => (
+          <span key={i} className="mx-12 shrink-0 whitespace-nowrap text-4xl font-black tracking-wide text-[#2b0a03] sm:text-6xl">
+            DJ Classis &amp; Keshari Generator
+          </span>
+        ))}
       </Marquee>
     </section>
   </>
-);
-
-/* ═══════════════════ 8. EVENTS ═══════════════════ */
-const events = [
-  { date: "OCT 24", day: "Saturday", venue: "Pulse Club", city: "Kanpur, UP", type: "Club Night", hot: true },
-  { date: "NOV 08", day: "Sunday", venue: "Grand Banquet Hall", city: "Lucknow, UP", type: "Wedding", hot: false },
-  { date: "NOV 22", day: "Sunday", venue: "Open Sky Arena", city: "Prayagraj, UP", type: "Festival", hot: true },
-  { date: "DEC 06", day: "Sunday", venue: "Sky Lounge Rooftop", city: "Varanasi, UP", type: "Private", hot: false },
-  { date: "DEC 25", day: "Friday", venue: "Club Elevate", city: "Agra, UP", type: "Club Night", hot: false },
-];
-
-const Events = () => (
-  <section id="events" className="relative bg-[#0d0d0d] py-28">
-    <div className="mx-auto max-w-[1100px] px-6">
-      <Reveal className="mb-14 text-center">
-        <Eyebrow>Live Calendar</Eyebrow>
-        <Title pre="Upcoming" hl="Events" />
-      </Reveal>
-
-      <div className="flex flex-col gap-4">
-        {events.map(({ date, day, venue, city, type, hot }, i) => (
-          <Reveal key={date} dir={i % 2 ? "right" : "left"} delay={i * 80}>
-            <div className={`group relative flex flex-wrap items-center gap-6 overflow-hidden rounded-2xl border px-7 py-5 transition-all duration-500 hover:translate-x-2 hover:border-[#ff4f8b] ${hot ? "border-[#ff8a3d]/40 bg-[#ff8a3d]/[.06]" : "border-white/10 bg-[#151515]"}`}>
-              <span className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[#ff4f8b] to-[#fbbf24] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <div className="min-w-[84px] text-center">
-                <p className="text-2xl font-black text-[#fbbf24]">{date}</p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-white/40">{day}</p>
-              </div>
-              <span className="hidden h-10 w-px bg-white/10 sm:block" />
-              <div className="min-w-[160px] flex-1">
-                <p className="text-lg font-bold text-white">{venue}</p>
-                <p className="text-sm text-white/50">{city}</p>
-              </div>
-              <span className="rounded-full border border-[#ff4f8b]/40 bg-[#ff4f8b]/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#ff8fb3]">{type}</span>
-              {hot && <span className="rounded-full bg-[#e11d2e] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white" style={{ animation: "blink 1.4s infinite" }}>Hot</span>}
-              <span className="text-2xl text-white/30 transition-all duration-300 group-hover:translate-x-2 group-hover:text-[#ff4f8b]">›</span>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </div>
-  </section>
 );
 
 /* ═══════════════════ 9. BOOK CTA (orbit + tilted devices) ═══════════════════ */
@@ -745,7 +684,6 @@ const LowerSection = () => (
     <HowItWorks />
     <CommonTypes />
     <Industry />
-    <Events />
     <CtaBanner />
     <Contact />
   </div>

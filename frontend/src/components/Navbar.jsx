@@ -1,110 +1,328 @@
+
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const LINKS = [
-  ["Home", "#home"],
-  ["About", "#about"],
-  ["Services", "#mixes"],
-  ["Events", "#events"],
-  ["Contact", "#contact"],
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Services", path: "/services" },
+  { label: "Contact", path: "/contact" },
 ];
 
-/* ════════════════════════════════════════════
-   NAVBAR
-════════════════════════════════════════════ */
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () =>
+      window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  const isActive = (path) => location.pathname === path;
+
   return (
-    <header
-      style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        background: scrolled || open ? "rgba(4,4,10,0.85)" : "transparent",
-        backdropFilter: scrolled || open ? "blur(14px)" : "none",
-        borderBottom: scrolled || open ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
-        transition: "all 0.3s ease",
-      }}
-    >
-      <div
-        className="container"
-        style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 68 }}
+    <>
+      <header
+        className={`dj-navbar ${
+          scrolled || open ? "dj-navbar-scrolled" : ""
+        }`}
       >
-        {/* Logo */}
-        <a href="#home" style={{ textDecoration: "none" }}>
-          <span className="font-orbitron" style={{ fontWeight: 900, fontSize: 16, letterSpacing: "0.15em", color: "#fff" }}>
-            DJ <span className="grad-text">CLASSIS</span>
-          </span>
-        </a>
+        <div className="dj-navbar-inner">
+          {/* Logo */}
+          <Link to="/" className="dj-logo">
+            <span>DJ</span>{" "}
+            <span className="dj-logo-gradient">CLASSIS</span>
+          </Link>
 
-        {/* Desktop links */}
-        <nav className="nav-links" style={{ display: "flex", alignItems: "center", gap: 32 }}>
-          {LINKS.map(([label, href]) => (
-            <a key={label} href={href} className="nav-link">{label}</a>
-          ))}
-          <a href="#contact" className="btn-primary" style={{ padding: "10px 22px" }}>
-            <span>Book Now</span>
-          </a>
-        </nav>
+          {/* Desktop navigation */}
+          <nav className="dj-desktop-nav">
+            {LINKS.map(({ label, path }) => (
+              <Link
+                key={path}
+                to={path}
+                className={`dj-nav-link ${
+                  isActive(path) ? "dj-nav-active" : ""
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
 
-        {/* Mobile burger */}
-        <button
-          type="button"
-          className="nav-burger"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((o) => !o)}
-        >
-          <span style={{ transform: open ? "translateY(6px) rotate(45deg)" : "none" }} />
-          <span style={{ opacity: open ? 0 : 1 }} />
-          <span style={{ transform: open ? "translateY(-6px) rotate(-45deg)" : "none" }} />
-        </button>
-      </div>
+            <Link to="/book-now" className="dj-book-button">
+              Book Now <span>→</span>
+            </Link>
+          </nav>
 
-      {/* Mobile menu */}
-      {open && (
-        <div className="nav-mobile">
-          {LINKS.map(([label, href]) => (
-            <a key={label} href={href} className="nav-link" onClick={() => setOpen(false)}>{label}</a>
-          ))}
-          <a href="#contact" className="btn-primary" onClick={() => setOpen(false)} style={{ justifyContent: "center" }}>
-            <span>Book Now</span>
-          </a>
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            className="dj-menu-toggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded={open}
+            onClick={() => setOpen((previous) => !previous)}
+          >
+            <span className={open ? "line-one open" : "line-one"} />
+            <span className={open ? "line-two open" : "line-two"} />
+            <span className={open ? "line-three open" : "line-three"} />
+          </button>
         </div>
-      )}
+
+        {/* Mobile navigation */}
+        {open && (
+          <nav className="dj-mobile-nav">
+            {LINKS.map(({ label, path }) => (
+              <Link
+                key={path}
+                to={path}
+                className={`dj-nav-link ${
+                  isActive(path) ? "dj-nav-active" : ""
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
+
+            <Link to="/book-now" className="dj-book-button">
+              Book Now <span>→</span>
+            </Link>
+          </nav>
+        )}
+      </header>
 
       <style>{`
-        .nav-link {
-          font-size: 12px; font-weight: 600; letter-spacing: 0.15em;
-          text-transform: uppercase; text-decoration: none; color: #9ca3af;
-          transition: color 0.2s;
+        .dj-navbar,
+        .dj-navbar * {
+          box-sizing: border-box;
         }
-        .nav-link:hover { color: #60a5fa; }
-        .nav-burger {
-          display: none; flex-direction: column; gap: 5px; padding: 8px;
-          background: none; border: none; cursor: pointer;
+
+        .dj-navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 9999;
+          background: rgba(4, 4, 10, 0.18);
+          border-bottom: 1px solid transparent;
+          transition: background 0.3s ease,
+                      border-color 0.3s ease,
+                      backdrop-filter 0.3s ease;
         }
-        .nav-burger span {
-          display: block; width: 22px; height: 2px; background: #fff;
-          border-radius: 2px; transition: all 0.25s ease;
+
+        .dj-navbar-scrolled {
+          background: rgba(4, 4, 10, 0.92);
+          border-bottom-color: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
         }
-        .nav-mobile {
-          display: none; flex-direction: column; gap: 20px;
-          padding: 20px 24px 28px;
+
+        .dj-navbar-inner {
+          width: 100%;
+          max-width: 1240px;
+          min-height: 72px;
+          margin: 0 auto;
+          padding: 0 28px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 24px;
         }
+
+        .dj-logo {
+          flex-shrink: 0;
+          display: inline-flex;
+          align-items: center;
+          white-space: nowrap;
+          text-decoration: none;
+          color: #ffffff !important;
+          font-family: 'Orbitron', sans-serif;
+          font-size: 17px;
+          font-weight: 900;
+          letter-spacing: 0.12em;
+        }
+
+        .dj-logo-gradient {
+          background: linear-gradient(
+            100deg,
+            #60a5fa,
+            #a78bfa,
+            #e879f9
+          );
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .dj-desktop-nav {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: clamp(16px, 2.5vw, 32px);
+        }
+
+        .dj-nav-link {
+          position: relative;
+          display: inline-block;
+          padding: 8px 0;
+          color: #a1a1aa !important;
+          font-family: 'Inter', sans-serif;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.13em;
+          text-transform: uppercase;
+          text-decoration: none;
+          white-space: nowrap;
+          transition: color 0.2s ease;
+        }
+
+        .dj-nav-link:hover,
+        .dj-nav-active {
+          color: #ffffff !important;
+        }
+
+        .dj-nav-active::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          border-radius: 4px;
+          background: linear-gradient(90deg, #38bdf8, #a78bfa);
+        }
+
+        .dj-book-button {
+          display: inline-flex;
+          flex-shrink: 0;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          padding: 12px 22px;
+          border: 1px solid rgba(96, 165, 250, 0.5);
+          border-radius: 999px;
+          background: linear-gradient(135deg, #2563eb, #7c3aed);
+          color: #ffffff !important;
+          font-family: 'Inter', sans-serif;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 0.06em;
+          text-decoration: none;
+          white-space: nowrap;
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .dj-book-button span {
+          color: #ffffff !important;
+        }
+
+        .dj-book-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 0 28px rgba(96, 165, 250, 0.4);
+        }
+
+        .dj-menu-toggle {
+          display: none;
+          width: 42px;
+          height: 42px;
+          flex-shrink: 0;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          border: 1px solid rgba(255, 255, 255, 0.16);
+          border-radius: 10px;
+          background: rgba(255, 255, 255, 0.06);
+          cursor: pointer;
+        }
+
+        .dj-menu-toggle span {
+          display: block;
+          width: 20px;
+          height: 2px;
+          border-radius: 3px;
+          background: #ffffff;
+          transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .dj-menu-toggle .line-one.open {
+          transform: translateY(7px) rotate(45deg);
+        }
+
+        .dj-menu-toggle .line-two.open {
+          opacity: 0;
+        }
+
+        .dj-menu-toggle .line-three.open {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .dj-mobile-nav {
+          display: none;
+        }
+
         @media (max-width: 820px) {
-          .nav-links { display: none !important; }
-          .nav-burger { display: flex; }
-          .nav-mobile { display: flex; }
+          .dj-navbar-inner {
+            min-height: 66px;
+            padding: 0 18px;
+          }
+
+          .dj-logo {
+            font-size: 15px;
+          }
+
+          .dj-desktop-nav {
+            display: none;
+          }
+
+          .dj-menu-toggle {
+            display: flex;
+          }
+
+          .dj-mobile-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 12px;
+            padding: 18px 22px 24px;
+            background: rgba(4, 4, 10, 0.98);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+          }
+
+          .dj-mobile-nav .dj-nav-link {
+            padding: 12px 0;
+          }
+
+          .dj-mobile-nav .dj-book-button {
+            margin-top: 6px;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .dj-navbar-inner {
+            padding: 0 12px;
+          }
+
+          .dj-logo {
+            font-size: 13px;
+            letter-spacing: 0.07em;
+          }
         }
       `}</style>
-    </header>
+    </>
   );
 };
 
