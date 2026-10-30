@@ -2,9 +2,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 /* ════════════════════════════════════════════════════════════
    SETTINGS
-   - VIDEO_SRC : video `frontend/public/Djclassis.mp4` me rakho
+   - VIDEO_SRC : video `frontend/public/DjCLASSIC.mp4` me rakho
                  (naam ka capital/small letter ekdum same rakhna)
-   - CHARACTER_IMG : apni transparent PNG lagani ho to "/dj.png"
+   - CHARACTER_IMG : apni transparent webp lagani ho to "/dj.webp"
                  likh do (public me rakho). Khali chhodo to
                  neeche wala drawn DJ character dikhega.
 
@@ -12,7 +12,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
    pink #ff4f8b · orange #ff8a3d · yellow #fbbf24
    coral #ee5a3b · red #e11d2e · black #0d0d0d
 ════════════════════════════════════════════════════════════ */
-const VIDEO_SRC = "/Djclassis.mp4";
+const VIDEO_SRC = "/DjCLASSIC.mp4";
 const CHARACTER_IMG = "";
 
 /* ════════════════════════════════════════════
@@ -261,7 +261,7 @@ const DjCharacter = () => (
 /* ════════════════════════════════════════════
    HERO SECTION
 ════════════════════════════════════════════ */
-const TITLE = "DJ CLASSIS";
+const TITLE = "DJ CLASSIC";
 const NOTES = [
   { l: "14%", b: "34%", d: 0, c: "♪" },
   { l: "26%", b: "52%", d: 1.2, c: "♫" },
@@ -423,7 +423,7 @@ const HeroSection = () => {
           {CHARACTER_IMG ? (
             <img
               src={CHARACTER_IMG}
-              alt="DJ Classis"
+              alt="DJ CLASSIC"
               draggable={false}
               className="h-full w-auto origin-bottom object-contain drop-shadow-[0_0_45px_rgba(255,79,139,0.5)] animate-[djDance_1s_ease-in-out_infinite]"
             />
@@ -465,7 +465,7 @@ const HeroSection = () => {
           className="mt-4 max-w-xl text-sm leading-relaxed text-white/70 opacity-0 animate-[djFadeUp_.8s_ease_forwards] sm:text-base"
           style={{ animationDelay: "1.15s" }}
         >
-          Bass-driven. Beat-perfected. DJ Classis crafts sonic experiences that move crowds and turn ordinary nights into unforgettable memories.
+          Bass-driven. Beat-perfected. DJ CLASSIC crafts sonic experiences that move crowds and turn ordinary nights into unforgettable memories.
         </p>
 
         <div
@@ -476,7 +476,7 @@ const HeroSection = () => {
             href="#contact"
             className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff4f8b] via-[#ff8a3d] to-[#fbbf24] px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.2em] text-white shadow-[0_0_30px_rgba(255,79,139,0.5)] transition hover:-translate-y-0.5 hover:shadow-[0_0_50px_rgba(255,138,61,0.6)]"
           >
-            Book DJ Classis <span>→</span>
+            Book DJ CLASSIC <span>→</span>
           </a>
           <a
             href="#mixes"

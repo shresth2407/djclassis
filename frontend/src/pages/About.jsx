@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 
 /* ══════════════════════════════════════════════════════════════
-   DJ CLASSIS & KESHARI GENERATOR — ABOUT PAGE (Tailwind CSS)
+   DJ CLASSIC & KESHARI GENERATOR — ABOUT PAGE (Tailwind CSS)
    Same theme as LowerSection:
    pink #ff4f8b · orange #ff8a3d · yellow #fbbf24 · coral #ee5a3b
    red #e11d2e · teal #2dd4bf · black #0d0d0d · card #151515
-   Hero photo: put any image at /public/a.png (gradient shows if missing)
+   Hero photo: put any image at /public/a.webp (gradient shows if missing)
 ══════════════════════════════════════════════════════════════ */
 
 const PHONES = [
@@ -126,7 +126,7 @@ const Hero = () => (
       <Reveal dir="left">
         <Eyebrow>About Us</Eyebrow>
         <h1 className="mt-3 text-[clamp(34px,5.4vw,60px)] font-black leading-[1.1] text-white">
-          DJ Classis &amp;{" "}
+          DJ CLASSIC &amp;{" "}
           <span className="underline decoration-[#fbbf24] decoration-[6px] underline-offset-[10px]">Keshari Generator</span>
         </h1>
         <p className="mt-8 max-w-lg text-base leading-[1.9] text-white/65">
@@ -156,7 +156,7 @@ const Hero = () => (
           <div className="relative h-[520px] overflow-hidden rounded-2xl bg-gradient-to-br from-[#7a1fa2] via-[#ff4f8b] to-[#ff8a3d]">
             <Vinyl className="absolute -right-10 top-24 h-64 w-64" style={{ animation: "spinSlow 14s linear infinite" }} />
             <div className="absolute bottom-24 left-6"><Equalizer bars={14} h={70} color="bg-white/85" /></div>
-            <img src="/a.png" alt="DJ Classis & Keshari Generator" onError={(e) => { e.currentTarget.style.display = "none"; }}
+            <img src="/a.webp" alt="DJ Classic & Keshari Generator" onError={(e) => { e.currentTarget.style.display = "none"; }}
               className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           </div>
@@ -241,7 +241,7 @@ const Contact = () => (
     <div className="relative mx-auto max-w-[1000px] px-6 text-center">
       <Reveal>
         <p className="font-script text-3xl text-[#2b0a03]">Book Now</p>
-        <h2 className="mt-2 text-[clamp(28px,4.4vw,48px)] font-black leading-tight text-[#2b0a03]">DJ Classis &amp; Keshari Generator</h2>
+        <h2 className="mt-2 text-[clamp(28px,4.4vw,48px)] font-black leading-tight text-[#2b0a03]">DJ Classic &amp; Keshari Generator</h2>
         <p className="mt-3 inline-flex items-center gap-2 text-base font-semibold text-white">
           <Icon name="pin" className="h-5 w-5" /> Obra, Sonbhadra, UP
         </p>
@@ -270,7 +270,7 @@ const Contact = () => (
   </section>
 );
 
-/* ═══════════════════ EXPORT ═══════════════════ */
+/* ═══════════════════ EXPORT  */
 const AboutPage = () => (
   <div className="dj-root overflow-x-hidden bg-[#0d0d0d] text-white">
     <GlobalStyles />

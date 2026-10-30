@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 /* ══════════════════════════════════════════════════════════════
-   DJ CLASSIS & KESHARI GENERATOR — CONTACT PAGE (Tailwind CSS)
+   DJ CLASSIC & KESHARI GENERATOR — CONTACT PAGE (Tailwind CSS)
    Same theme: pink #ff4f8b · orange #ff8a3d · yellow #fbbf24
    coral #ee5a3b · red #e11d2e · black #0d0d0d · card #151515
 ══════════════════════════════════════════════════════════════ */
@@ -87,7 +87,7 @@ const Hero = () => (
         <Eyebrow>Get In Touch</Eyebrow>
         <h1 className="mt-3 text-[clamp(34px,5.4vw,58px)] font-black leading-[1.1] text-white">
           Book{" "}
-          <span className="underline decoration-[#fbbf24] decoration-[6px] underline-offset-[10px]">DJ Classis</span>{" "}
+          <span className="underline decoration-[#fbbf24] decoration-[6px] underline-offset-[10px]">DJ Classic</span>{" "}
           &amp; Keshari Generator
         </h1>
         <p className="mx-auto mt-6 max-w-md text-[15px] leading-[1.9] text-white/60">Call, WhatsApp or send your event details. We reply fast.</p>
@@ -126,7 +126,7 @@ const Cards = () => (
             <Icon name="pin" className="h-7 w-7" />
           </div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Location</p>
-          <p className="mt-1 text-2xl font-black leading-tight text-white">Obra, Sonbhadra</p>
+          <p className="mt-1 text-2xl font-black leading-tight text-white">Behind Gurudwara Chopn Road, Obra, Sonbhadra</p>
           <p className="text-lg font-semibold text-white/70">Uttar Pradesh</p>
         </div>
       </Reveal>
@@ -189,24 +189,44 @@ const FormMap = () => {
           </form>
         </Reveal>
 
-        <Reveal dir="right">
-          <div className="flex h-full flex-col gap-6">
-            <div className="relative min-h-[260px] flex-1 overflow-hidden rounded-3xl border border-white/10 bg-[#151515]">
-              <iframe title="Obra, Sonbhadra" loading="lazy" className="absolute inset-0 h-full w-full border-0 opacity-90 [filter:invert(.9)_hue-rotate(180deg)_saturate(.8)]"
-                src="https://www.google.com/maps?q=Obra,Sonbhadra,Uttar+Pradesh&output=embed" />
-              <span className="pointer-events-none absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-[#0d0d0d]/90 px-4 py-2 text-xs font-semibold text-white">
-                <Icon name="pin" className="h-4 w-4 text-[#ff4f8b]" /> Obra, Sonbhadra, UP
-              </span>
-            </div>
-            <div className="flex items-center gap-4 rounded-2xl bg-[#ee5a3b] p-6">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#0d0d0d] text-[#fbbf24]"><Icon name="clock" className="h-6 w-6" /></span>
-              <div>
-                <p className="font-bold text-[#2b0a03]">Available for booking</p>
-                <p className="text-sm text-white">Call early to lock your date.</p>
-              </div>
-            </div>
-          </div>
-        </Reveal>
+       
+<Reveal dir="right">
+  <div className="flex h-full flex-col gap-6">
+    <div className="relative min-h-[260px] flex-1 overflow-hidden rounded-3xl border border-white/10 bg-[#151515]">
+      <iframe
+        title="DJ Classic and Keshari Generator, Obra"
+        loading="lazy"
+        className="absolute inset-0 h-full w-full border-0 opacity-90 [filter:invert(.9)_hue-rotate(180deg)_saturate(.8)]"
+        src="https://www.google.com/maps?q=24.457936,82.9926708&output=embed"
+      />
+
+      <a
+        href="https://www.google.com/maps/place/Dj+classic+and+keshari+generator/@24.4579318,82.9923855,62m/data=!3m1!1e3!4m22!1m15!4m14!1m6!1m2!1s0x398ee526c6e1f2e5:0x7ace656a62cd4350!2sDj+classic+and+keshari+generator,+Gurudwara+Gali+Rd,+Sector+5,+Obra,+Uttar+Pradesh+231219!2m2!1d82.9926727!2d24.4579356!1m6!1m2!1s0x398ee526c6e1f2e5:0x7ace656a62cd4350!2sDj+classic+and+keshari+generator,+Gurudwara+Gali+Rd,+Sector+5,+Obra,+Uttar+Pradesh+231219!2m2!1d82.9926727!2d24.4579356!3m5!1s0x398ee526c6e1f2e5:0x7ace656a62cd4350!8m2!3d24.457936!4d82.9926708!16s%2Fg%2F11q1p3vscd?entry=ttu"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="pointer-events-auto absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-[#0d0d0d]/90 px-4 py-2 text-xs font-semibold text-white"
+      >
+        <Icon name="pin" className="h-4 w-4 text-[#ff4f8b]" />
+        DJ Classic and Keshari Generator, Obra
+      </a>
+    </div>
+
+    <div className="flex items-center gap-4 rounded-2xl bg-[#ee5a3b] p-6">
+      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#0d0d0d] text-[#fbbf24]">
+        <Icon name="clock" className="h-6 w-6" />
+      </span>
+      <div>
+        <p className="font-bold text-[#2b0a03]">
+          Available for booking
+        </p>
+        <p className="text-sm text-white">
+          Call early to lock your date.
+        </p>
+      </div>
+    </div>
+  </div>
+</Reveal>
+
       </div>
     </section>
   );

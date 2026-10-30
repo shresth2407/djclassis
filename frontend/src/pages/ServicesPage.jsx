@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 
 /* ══════════════════════════════════════════════════════════════
-   DJ CLASSIS & KESHARI GENERATOR — SERVICES PAGE (Tailwind CSS)
+   DJ CLASSIC & KESHARI GENERATOR — SERVICES PAGE (Tailwind CSS)
    Same theme as LowerSection / AboutPage:
    pink #ff4f8b · orange #ff8a3d · yellow #fbbf24 · coral #ee5a3b
    red #e11d2e · teal #2dd4bf · black #0d0d0d · card #151515
-   Optional card photos: put a path in a service's `img` (e.g. "/a.png").
+   Optional card photos: put a path in a service's `img` (e.g. "/a.webp").
 ══════════════════════════════════════════════════════════════ */
 
 const PHONES = [
@@ -167,7 +167,7 @@ const Hero = () => (
           <span className="underline decoration-[#fbbf24] decoration-[6px] underline-offset-[10px]">Perfect Event</span>
         </h1>
         <p className="mt-8 max-w-xl text-base leading-[1.9] text-white/65">
-          From home DJ and road DJ to stage programs, puja and every kind of event — DJ Classis &amp; Keshari Generator brings the sound, the setup and the energy.
+          From home DJ and road DJ to stage programs, puja and every kind of event — DJ Classic &amp; Keshari Generator brings the sound, the setup and the energy.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <PillBtn href={`tel:${PHONES[0].tel}`}><Icon name="phone" className="h-5 w-5" />Call Now</PillBtn>
@@ -348,7 +348,7 @@ const Cta = () => (
     <div className="relative mx-auto max-w-[1000px] px-6 text-center">
       <Reveal>
         <p className="font-script text-3xl text-[#2b0a03]">Ready To Book?</p>
-        <h2 className="mt-2 text-[clamp(28px,4.4vw,48px)] font-black leading-tight text-[#2b0a03]">DJ Classis &amp; Keshari Generator</h2>
+        <h2 className="mt-2 text-[clamp(28px,4.4vw,48px)] font-black leading-tight text-[#2b0a03]">DJ Classic &amp; Keshari Generator</h2>
         <p className="mt-3 inline-flex items-center gap-2 font-semibold text-white"><Icon name="pin" className="h-5 w-5" /> Obra, Sonbhadra, UP</p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           {PHONES.map((p) => (

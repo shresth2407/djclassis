@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 /* ══════════════════════════════════════════════════════════════
-   DJ CLASSIS & KESHARI GENERATOR — LOWER SECTION (Tailwind CSS)
+   DJ CLASSIC & KESHARI GENERATOR — LOWER SECTION (Tailwind CSS)
    Palette (taken from the reference screenshots):
    pink    #ff4f8b   orange  #ff8a3d   yellow  #fbbf24
    coral   #ee5a3b   red     #e11d2e   teal    #2dd4bf
@@ -251,7 +251,7 @@ const About = () => {
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <Reveal dir="left">
             <p className="mb-5 text-base leading-[1.9] text-white/70">
-              DJ Classis &amp; Keshari Generator brings raw energy and precision mixing to every stage. With over a decade of experience across weddings, corporate events, and club nights — we deliver a sound that hits deep.
+              DJ Classic &amp; Keshari Generator brings raw energy and precision mixing to every stage. With over a decade of experience across weddings, corporate events, and club nights — we deliver a sound that hits deep.
             </p>
             <p className="mb-9 text-[15px] leading-[1.8] text-white/45">
               From Bhojpuri bangers to Bollywood anthems and international EDM — we read the crowd and keep the floor moving all night long.
@@ -332,14 +332,14 @@ const MarqueeBand = () => (
 );
 
 /* ═══════════════════ 3. TRENDING GENRES ═══════════════════ */
-/* Images come from the /public folder: a.png, b.png, c.png ... (Vite/CRA serve them from "/"). Gradient is only a fallback if an image is missing. */
+/* Images come from the /public folder: a.webp, b.webp, c.webp ... (Vite/CRA serve them from "/"). Gradient is only a fallback if an image is missing. */
 const trending = [
-  { n: "01", g: "from-[#7a1fa2] via-[#ff4f8b] to-[#ff8a3d]", img: "/a.png" },
-  { n: "02", g: "from-[#3a0a1f] via-[#e11d2e] to-[#ff4f8b]", img: "/b.png" },
-  { n: "03", g: "from-[#0b1b4a] via-[#6a1fd0] to-[#ff4f8b]", img: "/c.png" },
-  { n: "04", g: "from-[#6b2a00] via-[#ff8a3d] to-[#fbbf24]", img: "/d.png" },
-  { n: "05", g: "from-[#06322f] via-[#12908a] to-[#2dd4bf]", img: "/e.png" },
-  { n: "06", g: "from-[#2a2a2a] via-[#8a3a1f] to-[#ee5a3b]", img: "/f.png" },
+  { n: "01", g: "from-[#7a1fa2] via-[#ff4f8b] to-[#ff8a3d]", img: "/a.webp" },
+  { n: "02", g: "from-[#3a0a1f] via-[#e11d2e] to-[#ff4f8b]", img: "/m.avif" },
+  { n: "03", g: "from-[#0b1b4a] via-[#6a1fd0] to-[#ff4f8b]", img: "/n.jpg" },
+  { n: "04", g: "from-[#6b2a00] via-[#ff8a3d] to-[#fbbf24]", img: "/d.jpeg" },
+  { n: "05", g: "from-[#06322f] via-[#12908a] to-[#2dd4bf]", img: "/k.jpeg" },
+  { n: "06", g: "from-[#2a2a2a] via-[#8a3a1f] to-[#ee5a3b]", img: "/f.webp" },
 ];
 
 const GenreCard = ({ n, g, img, i }) => (
@@ -483,7 +483,7 @@ const HowItWorks = () => (
             </div>
           ))}
         </div>
-        <div className="mt-12 flex flex-wrap items-center gap-8">
+        <div className="mt-12 flex flex-wrap items-center gap-8">CLASSIC
           <PillBtn>Get Started</PillBtn>
           <p className="text-[15px] leading-relaxed text-white/45">Book Something<br />Awesome !</p>
         </div>
@@ -494,13 +494,13 @@ const HowItWorks = () => (
 
 /* ═══════════════════ 6. COMMON TYPES (water-flow carousel, left → right) ═══════════════════ */
 const types = [
-  { g: "from-[#3a0a1f] via-[#e11d2e] to-[#ff4f8b]", img: "/g.png" },
-  { g: "from-[#6b2a00] via-[#ff8a3d] to-[#fbbf24]", img: "/h.png" },
-  { g: "from-[#0b1b4a] via-[#6a1fd0] to-[#ff4f8b]", img: "/i.png" },
-  { g: "from-[#06322f] via-[#12908a] to-[#2dd4bf]", img: "/j.png" },
-  { g: "from-[#4a0d2e] via-[#ff4f8b] to-[#fbbf24]", img: "/k.png" },
-  { g: "from-[#2a2a2a] via-[#8a3a1f] to-[#ee5a3b]", img: "/l.png" },
-  { g: "from-[#1d0b3b] via-[#7a1fa2] to-[#ff8a3d]", img: "/m.png" },
+  { g: "from-[#3a0a1f] via-[#e11d2e] to-[#ff4f8b]", img: "/m.avif" },
+  { g: "from-[#6b2a00] via-[#ff8a3d] to-[#fbbf24]", img: "/l.jpg" },
+  { g: "from-[#0b1b4a] via-[#6a1fd0] to-[#ff4f8b]", img: "/i.webp" },
+  { g: "from-[#06322f] via-[#12908a] to-[#2dd4bf]", img: "/j.webp" },
+  { g: "from-[#4a0d2e] via-[#ff4f8b] to-[#fbbf24]", img: "/k.jpeg" },
+  { g: "from-[#2a2a2a] via-[#8a3a1f] to-[#ee5a3b]", img: "/l.webp" },
+  { g: "from-[#1d0b3b] via-[#7a1fa2] to-[#ff8a3d]", img: "/n.jpg" },
 ];
 
 const CommonTypes = () => (
@@ -532,11 +532,11 @@ const CommonTypes = () => (
 
 /* ═══════════════════ 7. INDUSTRY CARDS + COAL-CORAL PARTNER STRIP ═══════════════════ */
 const industry = [
-  { t: "Bollywood", s: "DJ Classis", g: "from-[#e11d2e] to-[#3a0a1f]" },
-  { t: "Bhojpuri", s: "DJ Classis", g: "from-[#ff8a3d] to-[#6b2a00]" },
-  { t: "EDM", s: "DJ Classis", g: "from-[#6a1fd0] to-[#0b1b4a]" },
-  { t: "Hip-Hop", s: "DJ Classis", g: "from-[#12908a] to-[#06322f]" },
-  { t: "Retro", s: "DJ Classis", g: "from-[#ff4f8b] to-[#4a0d2e]" },
+  { t: "Bollywood", s: "DJ CLASSIC", g: "from-[#e11d2e] to-[#3a0a1f]" },
+  { t: "Bhojpuri", s: "DJ CLASSIC", g: "from-[#ff8a3d] to-[#6b2a00]" },
+  { t: "EDM", s: "DJ CLASSIC", g: "from-[#6a1fd0] to-[#0b1b4a]" },
+  { t: "Hip-Hop", s: "DJ CLASSIC", g: "from-[#12908a] to-[#06322f]" },
+  { t: "Retro", s: "DJ CLASSIC", g: "from-[#ff4f8b] to-[#4a0d2e]" },
 ];
 
 const Industry = () => (
@@ -573,7 +573,7 @@ const Industry = () => (
       <Marquee dir="right" speed={32} className="relative">
         {Array.from({ length: 4 }).map((_, i) => (
           <span key={i} className="mx-12 shrink-0 whitespace-nowrap text-4xl font-black tracking-wide text-[#2b0a03] sm:text-6xl">
-            DJ Classis &amp; Keshari Generator
+            DJ Classic &amp; Keshari Generator
           </span>
         ))}
       </Marquee>
@@ -611,7 +611,7 @@ const CtaBanner = () => (
           </Device>
           <Device className="right-[2%] top-[8%] h-[240px] w-[330px] -rotate-[8deg]" style={{ "--r": "-8deg", animation: "floaty 7s ease-in-out 1s infinite" }}>
             <div className="relative h-full w-full bg-gradient-to-br from-[#ee5a3b] via-[#ff4f8b] to-[#6a1fd0] p-5">
-              <p className="font-script text-5xl text-white">DJ Classis</p>
+              <p className="font-script text-5xl text-white">DJ CLASSIC</p>
               <Vinyl className="absolute -bottom-6 -right-6 h-40 w-40" />
               <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.25em] text-white/90">Your Party · Your Wedding · Your Event</p>
             </div>
@@ -620,7 +620,7 @@ const CtaBanner = () => (
       </Reveal>
 
       <Reveal dir="right" className="lg:text-right">
-        <Eyebrow>Book DJ Classis</Eyebrow>
+        <Eyebrow>Book DJ CLASSIC</Eyebrow>
         <Title pre="The Best Way To" hl="Book Your Night's DJ" />
         <p className="mt-6 text-[15px] leading-[1.9] text-white/55 lg:ml-auto lg:max-w-lg">
           Our carefully curated selection of services will ensure you have a wonderful experience in every aspect. We provide assistance and support 24 hours a day, 7 days a week, until the last song plays.
@@ -647,7 +647,7 @@ const Contact = () => {
       <div className="mx-auto max-w-[760px] px-6">
         <Reveal className="mb-12 text-center">
           <Eyebrow>Get in Touch</Eyebrow>
-          <Title pre="Book" hl="DJ Classis" />
+          <Title pre="Book" hl="DJ CLASSIC" />
           <p className="mx-auto mt-4 max-w-md text-[15px] text-white/50">Fill the form and we will get back within 24 hours with pricing and availability.</p>
         </Reveal>
 

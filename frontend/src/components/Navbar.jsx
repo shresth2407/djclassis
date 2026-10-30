@@ -45,7 +45,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="dj-logo">
             <span>DJ</span>{" "}
-            <span className="dj-logo-gradient">CLASSIS</span>
+            <span className="dj-logo-gradient">CLASSIC</span>
           </Link>
 
           {/* Desktop navigation */}

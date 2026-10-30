@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 /* ══════════════════════════════════════════════════════════════
-   DJ CLASSIS & KESHARI GENERATOR — FOOTER (Tailwind CSS)
+   DJ CLASSIC & KESHARI GENERATOR — FOOTER (Tailwind CSS)
    Same theme: pink #ff4f8b · orange #ff8a3d · yellow #fbbf24
    coral #ee5a3b · red #e11d2e · black #0d0d0d · card #151515
 
@@ -11,7 +11,7 @@ import { useState, useEffect, useRef } from "react";
 ══════════════════════════════════════════════════════════════ */
 
 /* ───────────── CONFIG: edit paths here ───────────── */
-const BRAND = "DJ Classis & Keshari Generator";
+const BRAND = "DJ Classic & Keshari Generator";
 
 const PHONES = [
   { show: "84235 94775", tel: "+918423594775", wa: "918423594775" },
@@ -183,7 +183,7 @@ const Footer = () => {
             <p className="font-script bg-gradient-to-r from-[#ff4f8b] to-[#ff8a3d] bg-clip-text text-[28px] leading-none text-transparent">Ready To Drop The Beat?</p>
             <h3 className="mt-3 max-w-xl text-[clamp(26px,4vw,42px)] font-bold leading-[1.15] text-white">
               Book Your Date With{" "}
-              <span className="underline decoration-[#fbbf24] decoration-[5px] underline-offset-[8px]">DJ Classis</span>
+              <span className="underline decoration-[#fbbf24] decoration-[5px] underline-offset-[8px]">DJ Classic</span>
             </h3>
             <div className="mt-5"><Equalizer bars={20} h={34} /></div>
           </Reveal>
@@ -211,14 +211,14 @@ const Footer = () => {
       <div className="relative">
         <p className="outline-text pointer-events-none absolute -bottom-10 left-0 whitespace-nowrap text-[200px] font-black leading-none"
           style={{ animation: "mqRight 80s linear infinite", width: "max-content" }}>
-          DJ CLASSIS KESHARI GENERATOR DJ CLASSIS KESHARI GENERATOR
+          DJ CLASSIC KESHARI GENERATOR DJ CLASSIC KESHARI GENERATOR
         </p>
 
         <div className="relative mx-auto grid max-w-[1200px] gap-12 px-6 py-20 sm:grid-cols-2 lg:grid-cols-[1.4fr_.8fr_.9fr_1.2fr]">
           {/* brand */}
           <Reveal>
             <A to="/" className="inline-block">
-              <p className="text-2xl font-black leading-tight text-white">DJ Classis <span className="text-[#fbbf24]">&amp;</span><br />Keshari Generator</p>
+              <p className="text-2xl font-black leading-tight text-white">DJ Classic <span className="text-[#fbbf24]">&amp;</span><br />Keshari Generator</p>
             </A>
             <p className="mt-5 max-w-sm text-[15px] leading-[1.9] text-white/55">
               The best DJ setup for home DJ, road DJ, stage programs, puja and every kind of event. Loud, clean sound and a crowd that never stops dancing.
