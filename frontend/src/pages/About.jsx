@@ -243,7 +243,7 @@ const Contact = () => (
         <p className="font-script text-3xl text-[#2b0a03]">Book Now</p>
         <h2 className="mt-2 text-[clamp(28px,4.4vw,48px)] font-black leading-tight text-[#2b0a03]">DJ Classic &amp; Keshari Generator</h2>
         <p className="mt-3 inline-flex items-center gap-2 text-base font-semibold text-white">
-          <Icon name="pin" className="h-5 w-5" /> Obraff, Sonbhadra, UP
+          <Icon name="pin" className="h-5 w-5" /> Obra, Sonbhadra, UP
         </p>
       </Reveal>
 
