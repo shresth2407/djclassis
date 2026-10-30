@@ -270,7 +270,7 @@ const Contact = () => (
   </section>
 );
 
-/* ═══════════════════ EXPORT ═══════════════════ */
+/* ═══════════════════ EXPORT ════════════ */
 const AboutPage = () => (
   <div className="dj-root overflow-x-hidden bg-[#0d0d0d] text-white">
     <GlobalStyles />
