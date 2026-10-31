@@ -163,7 +163,7 @@ const Hero = () => (
       <Reveal>
         <Eyebrow>Our Services</Eyebrow>
         <h1 className="mt-3 max-w-3xl text-[clamp(34px,5.6vw,64px)] font-black leading-[1.1] text-white">
-          Everything Fdddddor Your{" "}
+          Everything For Your{" "}
           <span className="underline decoration-[#fbbf24] decoration-[6px] underline-offset-[10px]">Perfect Event</span>
         </h1>
         <p className="mt-8 max-w-xl text-base leading-[1.9] text-white/65">
