@@ -363,7 +363,7 @@ const Cta = () => (
   </section>
 );
 
-/* ═══════════════════ EXPORT ═══════════════════ */
+/* ═══════════════════ EXPORT ═════════════ */
 const ServicesPage = () => (
   <div className="dj-root overflow-x-hidden bg-[#0d0d0d] text-white">
     <GlobalStyles />
