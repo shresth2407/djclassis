@@ -167,7 +167,7 @@ const Hero = () => (
           <span className="underline decoration-[#fbbf24] decoration-[6px] underline-offset-[10px]">Perfect Event</span>
         </h1>
         <p className="mt-8 max-w-xl text-base leading-[1.9] text-white/65">
-          From home DJ and road DJ to stage programs, puja and every kind of event — DJ Classic &amp; Keshari Generator brings the sound, the setup and the energy.
+          From home DJ and road DJ to stage programs, puja and every kind of event — DJ Classic &amp; Keshari Gd, the setup and the energy.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <PillBtn href={`tel:${PHONES[0].tel}`}><Icon name="phone" className="h-5 w-5" />Call Now</PillBtn>
