@@ -171,7 +171,7 @@ const Hero = () => (
   </section>
 );
 
-/* ═══════════════════ 2. MARQUEE BAND ═══════════════════ */
+/* ═══════════════════ 2. MARQUEE BAND ════════ */
 const WORDS = ["Home DJ", "Road DJ", "Stage Program", "Puja", "All Types Of Events"];
 const Band = () => (
   <div className="overflow-hidden bg-[#0d0d0d] py-10">
