@@ -365,7 +365,7 @@ const BookNowPage = () => {
             <Eyebrow>Book Now</Eyebrow>
             <h1 className="mt-3 text-[clamp(32px,5.2vw,56px)] font-black leading-[1.1] text-white">
               Lock Your Date With{" "}
-              <span className="underline decoration-[#fbbf24] decoration-[6px] underline-offset-[10px]">DJ CLASSIC</span>
+              <span className="underline decoration-[#fbbf24] decoration-[6px] underline-offset-[10px]">DJIC</span>
             </h1>
             <p className="mx-auto mt-6 max-w-md text-[15px] leading-[1.9] text-white/60">Pick your event and date, and pay in cash at the event. No online payment needed.</p>
             <div className="mt-6 flex justify-center"><Equalizer bars={18} h={40} color="bg-gradient-to-t from-[#ff4f8b] to-[#fbbf24]" /></div>
