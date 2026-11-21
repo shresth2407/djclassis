@@ -151,7 +151,7 @@ const SERVICES = [
 
 const WORDS = ["Home DJ", "Road DJ", "Wedding DJ", "Stage Program", "Sound Setup", "Puja & Jagran", "All Events"];
 
-/* ═══════════════════ 1. HERO ═══════════════════ */
+/* ═══════════════════ 1. HERO ═══════════ */
 const Hero = () => (
   <section className="relative overflow-hidden bg-[#0d0d0d] bg-[radial-gradient(circle_at_0%_100%,rgba(238,90,59,.22),transparent_45%)] pb-20 pt-32">
     <span className="absolute left-[6%] top-28 h-4 w-4 bg-[#e11d2e]" style={{ animation: "floaty 5s ease-in-out infinite" }} />
@@ -167,7 +167,7 @@ const Hero = () => (
           <span className="underline decoration-[#fbbf24] decoration-[6px] underline-offset-[10px]">Perfect Event</span>
         </h1>
         <p className="mt-8 max-w-xl text-base leading-[1.9] text-white/65">
-          From home DJ and road DJ to stage programs, puja and every kind of event — DJ Classic &amp; Keshari Generator brings the sound, the setup and the energy.
+          From home DJ and road DJ to stage pro kind of event — DJ Classic &amp; Keshari Generator brings the sound, the setup and the energy.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <PillBtn href={`tel:${PHONES[0].tel}`}><Icon name="phone" className="h-5 w-5" />Call Now</PillBtn>
