@@ -207,7 +207,7 @@ const FormMap = () => {
         className="pointer-events-auto absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-[#0d0d0d]/90 px-4 py-2 text-xs font-semibold text-white"
       >
         <Icon name="pin" className="h-4 w-4 text-[#ff4f8b]" />
-        DJ Classic and Keshari Generator, Obra
+        DJ Classic and Keator, Obra
       </a>
     </div>
 
