@@ -151,7 +151,7 @@ const SERVICES = [
 
 const WORDS = ["Home DJ", "Road DJ", "Wedding DJ", "Stage Program", "Sound Setup", "Puja & Jagran", "All Events"];
 
-/* ═══════════════════ 1═════════ */
+/* ═══════════════════ 1. HERO ═══════════════════ */
 const Hero = () => (
   <section className="relative overflow-hidden bg-[#0d0d0d] bg-[radial-gradient(circle_at_0%_100%,rgba(238,90,59,.22),transparent_45%)] pb-20 pt-32">
     <span className="absolute left-[6%] top-28 h-4 w-4 bg-[#e11d2e]" style={{ animation: "floaty 5s ease-in-out infinite" }} />
